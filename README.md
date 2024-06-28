@@ -14,32 +14,30 @@ _충돌 원인과 해결 방법에 대해 배워 봅시다._
 </header>
 
 <!--
-  <<< Author notes: Step 2 >>>
+  <<< Author notes: Step 3 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-## 2단계: Merge 충돌 해결
+## 3단계: 충돌을 유발해보세요.
 
-_좋은 시작입니다! 이제 merge 충돌에 대해 좀 더 깊게 들어가 봅시다. :mag:_
+_잘하셨습니다! merge 충돌을 해결하셨군요! :tada:_
 
-겁날 수 있지만, 겁먹을 필요는 없습니다. 똑똑한 Git이 merge를 도와주기 때문이죠! Git은 사람에게 오로지 어떻게 해결할 지만 묻습니다. [충돌 해결](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line). 때때로, merge 충돌을 해결하는 최고의 방법은 두 브랜치의 내용을 모두 추가하거나, 심지어는 완전히 새로운 내용을 추가하는 것입니다! 바로 이런 점 때문에 Git이 사람에게 코드를 살펴보게하고, 올바른 수정을 하도록 합니다.
+충돌을 해결하더라도 pull request가 자동으로 Github에 merge 되지는 않습니다. 대신에, 충돌 해결 상태를 merge commit에 저장하고, 여러분과 여러분 팀이 계속 작업할 수 있도록 합니다. 충돌을 해결하기 위해, Github은 _reverse merge_라는 것을 합니다. 이는 `main` 브랜치의 변경 사항이 `my-resume`에 merge된 것을 말합니다. reverse merge에 의해 오직 `my-resume` 브랜치만 업데이트 됩니다. 이는 main 브랜치에 merge 하기 전에 여러분의 브랜치에서 미리 테스트 해볼 수 있도록 합니다.
 
-### :keyboard: 작업: merge 충돌을 해결하세요.
+이제, 좀 더 악랄하게 해봅시다. (온전히 여러분의 학습을 위해서!!)
 
-1. 여러분이 생성한 Pull request를 열어보세요. merge 충돌을 발생시켜 두었습니다! 겁먹지 마세요!
-1. 해당 페이지 아랫 부분에 "This branch has conflicts that must be resolved" 메세지 아래에 **Resolve conflicts** 버튼을 클릭하세요.
-1. `<<<<<<< my-resume`로 시작하고 `>>>>>>> main`로 끝나는 부분을 확인해보세요. Git이 충돌이 발생한 부분을 보여주기 위해 표시한 마커입니다.
-1. main 브랜치의 모든 수정 사항을 제거하기 위해 `=======`과 `>>>>>>> main` 사이의 모든 내용을 지워줍니다.
-1. 이제는 다음과 같은 모든 충돌 마커를 지웁시다. :
-   ```
-   <<<<<<< my-resume
-   =======
-   >>>>>>> main
-   ```
-1. merge 충돌 마커들을 지웠으면, **Mark as resolved**를 클릭합니다.
-1. 마지막으로, **Commit merge**를 클릭합니다.
-1. 20초 후에 이 페이지를 새로고침 하면, [GitHub Actions](https://docs.github.com/en/actions)이 자동으로 다음 단계로 안내합니다.
+### :keyboard: 작업: 직접 충돌을 유발해 봅시다.
+
+현재 상태는 `references.md`라는 파일을 main 브랜치에 push 했지만, `my-resume` 브랜치에는 업데이트 하지 않은 상태입니다.
+
+1. `my-resume` 브랜치를 여세요.
+1. `Add file` 드롭다운 메뉴를 누르고 `Create new file`을 클릭합니다.
+1. 충돌을 일으키기 위해 파일의 이름을 `references.md`로 합니다.
+1. main 브랜치에 있는 `references.md`와 다르게 내용을 자유롭게 작성합니다.
+1. `Commit changes`를 클릭하고, commit 메세지를 작성합니다.
+1. "Commit directly to the `my-resume` branch" 옵션이 선택되어있는지 확인하고, **Commit changes** 버튼을 클릭합니다.
+1. 20초 후에 이 페이지를 새로고침 하면, [GitHub Actions](https://docs.github.com/en/actions) 이 자동으로 다음 단계로 안내합니다.
 
 <footer>
 
